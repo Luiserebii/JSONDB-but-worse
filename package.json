@@ -22,6 +22,7 @@
   "homepage": "https://github.com/Luiserebii/JSONDB-but-worse#readme",
   "devDependencies": {
     "chai": "^4.2.0",
-    "mocha": "^6.1.4"
+    "mocha": "^6.1.4",
+    "typescript": "^3.5.3"
   }
 }
