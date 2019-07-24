@@ -13,7 +13,7 @@ class ObjectDB extends BasicDB {
   /**
    *
    */
-  saveData(data: JSONData[], filepath: string, name: string): void{
+  saveData(data: JSONData[], filepath: string, name: string): void {
 
     let json: JSONData[] = [];
     for(let d: JSONData in data){

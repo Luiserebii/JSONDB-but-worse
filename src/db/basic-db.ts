@@ -30,7 +30,7 @@ class BasicDB {
     if(!fs.existsSync(path.dirname(file))) {
       throw 'No existing data! Searched in the following directory: ' + path.dirname(file);
     } else {
-      const contents = fs.readFileSync(file);
+      const contents: string = fs.readFileSync(file, 'utf8');
       return JSON.parse(contents);
     }
   }
