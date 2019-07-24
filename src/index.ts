@@ -1,9 +1,9 @@
-const BasicDB = require('./db/basic-db');
-const ObjectDB = require('./db/object-db');
-const JSONData = require('./basic/json-data');
-const Util = require('./util/util');
+import BasicDB = require('./db/basic-db');
+import ObjectDB = require('./db/object-db');
+import JSONData = require('./basic/json-data');
+import Util = require('./util/util');
 
-module.exports = {
+export = {
   'BasicDB': BasicDB,
   'ObjectDB': ObjectDB,
   'JSONData': JSONData,

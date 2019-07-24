@@ -34,4 +34,4 @@ class BasicDB {
 
 }
 
-module.exports = BasicDB;
+export = BasicDB;

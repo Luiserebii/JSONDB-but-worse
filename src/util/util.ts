@@ -1,4 +1,4 @@
-const util = require('util');
+import util = require('util');
 
 class Util {
 
@@ -38,4 +38,4 @@ class Util {
 
 }
 
-module.exports = Util;
+export = Util;

@@ -5,7 +5,7 @@
  * 
  */
 
-const BasicDB = require('./basic-db');
+import BasicDB = require('./basic-db');
 
 class ObjectDB extends BasicDB {
 
@@ -40,4 +40,4 @@ class ObjectDB extends BasicDB {
 
 }
 
-module.exports = ObjectDB;
+export = ObjectDB;

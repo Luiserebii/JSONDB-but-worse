@@ -1,4 +1,4 @@
-const Util = require('../util/util')
+import Util = require('../util/util');
 
 //Extend this, for the use of the ObjectDB
 class JSONData {
@@ -7,4 +7,4 @@ class JSONData {
 
 }
 
-module.exports = JSONData;
+export = JSONData;
