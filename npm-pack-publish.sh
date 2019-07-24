@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Grab current working directory
+CURRDIR=$PWD
+
 # Make temporary directory, hold returned filepath
 TEMPDIR="$(mktemp -d)"
 
@@ -7,13 +10,16 @@ TEMPDIR="$(mktemp -d)"
 trap "rm -rf $TEMPDIR" EXIT
 
 # Copy necessary files over
-cp package.json README.md LICENSE dist/* $TEMPDIR
+cp -r package.json README.md LICENSE dist/* $TEMPDIR
 
 # Change directory into temporary directory
-cd $TMPDIR
+cd $TEMPDIR
 
-# npm publish
-npm publish
+# npm pack
+npm pack
+
+# move packed thing
+mv jsondb-but-worse*.tgz $CURRDIR
 
 # Cleanup temporary directory
 rm -rf $TEMPDIR
