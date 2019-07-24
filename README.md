@@ -16,6 +16,16 @@ db.saveData(records, './data', 'records.json')
 ```
 And of course, you can extend the `ObjectDB` class and build any OOP abstractions to simplify the above as you like (such as setting default directory and filenames).
 
+## Developing
+To test which files will be published, please use the script written instead of `npm pack` to allow for correct packing. These have been conveniently placed in npm scripting under the following:
+`npm run n-pack`
+`npm run n-publish`
+
+And an additional convenience command:
+`npm run clean`
+
+will simply delete the .tgz left behind by `n-pack`.
+
 ## Advice
 I really don't recommend you use this, it is flawed and very underdeveloped, but if you enjoy the attempted simplicity for any reason, knock yourself out. However, if you are a rational being, I highly suggest you use something actually good like [LevelDB](https://github.com/Level/level).
 
