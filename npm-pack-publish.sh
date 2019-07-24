@@ -15,11 +15,19 @@ cp -r package.json README.md LICENSE dist/* $TEMPDIR
 # Change directory into temporary directory
 cd $TEMPDIR
 
-# npm pack
-npm pack
+# Execute - based on flag, either pack, or publish
+if [ "$1" == "--pack" ]; then
+  npm pack
 
-# move packed thing
-mv jsondb-but-worse*.tgz $CURRDIR
+  # move packed thing
+  mv jsondb-but-worse*.tgz $CURRDIR
 
-# Cleanup temporary directory
-rm -rf $TEMPDIR
+  # Cleanup temporary directory
+  rm -rf $TEMPDIR
+
+elif [ "$1" == "--publish" ]; then
+  npm publish
+else
+  printf "\nHello friend!\nPlease pass one of the following flags:\n\n--pack   npm pack - preview package before publishing, .tgz is added to working directory\n--publish   npm publish - publish the package\n\n\n"
+fi
+
