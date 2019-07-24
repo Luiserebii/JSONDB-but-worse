@@ -8,6 +8,8 @@
 import BasicDB = require('./basic-db');
 import path = require('path');
 
+import JSONData = require('../basic/json-data');
+
 class ObjectDB extends BasicDB {
 
   /**
@@ -16,7 +18,7 @@ class ObjectDB extends BasicDB {
   saveData(data: JSONData[], filepath: string, name: string): void {
 
     let json: JSONData[] = [];
-    for(let d: JSONData in data){
+    for(let d in data){
       json.push(d.toJSON());
     }
     this.saveJSONToFile(path.resolve(filepath, name), json);

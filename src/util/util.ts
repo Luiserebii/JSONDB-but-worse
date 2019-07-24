@@ -16,12 +16,12 @@ class Util {
 
   //Recursive version of instanceToObjSimple; basically, if there are 
   static instanceToObj(ins: object): object {
-    let obj = {};
+    let obj: object = {};
     const keys = Object.keys(ins);
 
     for(let i = 0; i < keys.length; i++){
-      let k = keys[i];
-      let v = ins[k];
+      let k: any = keys[i];
+      let v: any = ins[k];
       if(typeof v === 'object' && v) {
         obj[k] = Util.instanceToObj(v);
       } else {

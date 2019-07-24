@@ -19,6 +19,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 var BasicDB = require("./basic-db");
+var path = require("path");
 var ObjectDB = /** @class */ (function (_super) {
     __extends(ObjectDB, _super);
     function ObjectDB() {
@@ -29,7 +30,7 @@ var ObjectDB = /** @class */ (function (_super) {
      */
     ObjectDB.prototype.saveData = function (data, filepath, name) {
         var json = [];
-        for (d in data) {
+        for (var d in data) {
             json.push(d.toJSON());
         }
         this.saveJSONToFile(path.resolve(filepath, name), json);
@@ -42,7 +43,7 @@ var ObjectDB = /** @class */ (function (_super) {
     ObjectDB.prototype.loadData = function (DataClass, filepath, name) {
         var json = this.loadJSONFromFile(path.resolve(filepath, name));
         var data = [];
-        for (j in json) {
+        for (var j in json) {
             data.push(new DataClass(j));
         }
         return data;
