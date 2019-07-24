@@ -1,6 +1,6 @@
 {
   "name": "jsondb-but-worse",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "",
   "main": "index.js",
   "directories": {
@@ -9,7 +9,10 @@
   },
   "scripts": {
     "test": "mocha",
-    "build": "tsc"
+    "build": "tsc",
+    "n-pack":"./scripts/npm-pack-publish.sh --pack",
+    "n-publish":"./scripts/npm-pack-publish.sh --publish",
+    "clean":"rm jsondb-but-worse*.tgz"
   },
   "repository": {
     "type": "git",
