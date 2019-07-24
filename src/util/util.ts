@@ -2,20 +2,20 @@ import util = require('util');
 
 class Util {
 
-  static instanceToObjSimple(ins) {
+  static instanceToObjSimple(ins: object): object {
     return Object.assign({}, ins);
   }
 
-  static objToString(obj) {
+  static objToString(obj: object): string {
     return util.inspect(obj);
   }
 
-  static instanceToStringSimple(ins) {
+  static instanceToStringSimple(ins: object) {
     return Util.objToString(Util.instanceToObjSimple(ins));
   }
 
   //Recursive version of instanceToObjSimple; basically, if there are 
-  static instanceToObj(ins) {
+  static instanceToObj(ins: object): object {
     let obj = {};
     const keys = Object.keys(ins);
 
@@ -32,7 +32,7 @@ class Util {
 
   }
 
-  static instanceToString(ins) {
+  static instanceToString(ins: object): string {
     return Util.objToString(Util.instanceToObj(ins));
   }
 
