@@ -6,16 +6,17 @@
  */
 
 import BasicDB = require('./basic-db');
+import path = require('path');
 
 class ObjectDB extends BasicDB {
 
   /**
    *
    */
-  saveData(data, filepath, name){
+  saveData(data: JSONData[], filepath: string, name: string): void{
 
-    let json = [];
-    for(d in data){
+    let json: JSONData[] = [];
+    for(let d: JSONData in data){
       json.push(d.toJSON());
     }
     this.saveJSONToFile(path.resolve(filepath, name), json);
@@ -27,11 +28,11 @@ class ObjectDB extends BasicDB {
    *
    */
   //Return JSON trades from filepath, one set in class as default
-  loadData(DataClass, filepath, name) {
+  loadData(DataClass: JSONData, filepath: string, name: string): JSONData[] {
 
     const json = this.loadJSONFromFile(path.resolve(filepath, name));
     let data = [];
-    for(j in json){
+    for(let j in json){
       data.push(new DataClass(j));
     }
     return data;

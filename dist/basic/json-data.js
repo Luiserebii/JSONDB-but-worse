@@ -1,5 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 var Util = require("../util/util");
 //Extend this, for the use of the ObjectDB
 var JSONData = /** @class */ (function () {

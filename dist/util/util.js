@@ -1,5 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 var util = require("util");
 var Util = /** @class */ (function () {
     function Util() {

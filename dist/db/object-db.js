@@ -18,7 +18,7 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-var BasicDB = require('./basic-db');
+var BasicDB = require("./basic-db");
 var ObjectDB = /** @class */ (function (_super) {
     __extends(ObjectDB, _super);
     function ObjectDB() {

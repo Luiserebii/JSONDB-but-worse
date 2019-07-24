@@ -3,6 +3,9 @@
  * 
  */
 
+import fs = require('fs');
+import path = require('path');
+
 class BasicDB {
 
   /**
@@ -10,7 +13,7 @@ class BasicDB {
    *
    */
 
-  saveJSONToFile(file, json) {
+  saveJSONToFile(file: string, json: object): void {
     if(!fs.existsSync(path.dirname(file))){
       fs.mkdirSync(path.dirname(file));
     } else {
@@ -23,7 +26,7 @@ class BasicDB {
    * Very simple function; simply load a JSON from the passed file.
    * 
    */
-  loadJSONFromFile(file) {
+  loadJSONFromFile(file: string): object {
     if(!fs.existsSync(path.dirname(file))) {
       throw 'No existing data! Searched in the following directory: ' + path.dirname(file);
     } else {
