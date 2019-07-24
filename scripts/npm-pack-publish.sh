@@ -1,13 +1,16 @@
 #!/bin/bash
 
-# Grab current working directory
-CURRDIR=$PWD
+# Grab the root node project's directory, relative to the script file
+NPMROOTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"/../
 
 # Make temporary directory, hold returned filepath
 TEMPDIR="$(mktemp -d)"
 
 # Setup a trap to clear tempdir and execute on EXIT
 trap "rm -rf $TEMPDIR" EXIT
+
+# Change directory into project's dir
+cd $NPMROOTDIR
 
 # Copy necessary files over
 cp -r package.json README.md LICENSE dist/* $TEMPDIR
@@ -20,7 +23,7 @@ if [ "$1" == "--pack" ]; then
   npm pack
 
   # move packed thing
-  mv jsondb-but-worse*.tgz $CURRDIR
+  mv jsondb-but-worse*.tgz $NPMROOTDIR
 
   # Cleanup temporary directory
   rm -rf $TEMPDIR
@@ -28,6 +31,6 @@ if [ "$1" == "--pack" ]; then
 elif [ "$1" == "--publish" ]; then
   npm publish
 else
-  printf "\nHello friend!\nPlease pass one of the following flags:\n\n--pack   npm pack - preview package before publishing, .tgz is added to working directory\n--publish   npm publish - publish the package\n\n\n"
+  printf "\nHello friend!\nPlease pass one of the following flags:\n\n--pack   npm pack - preview package before publishing, .tgz is moved to project's root directory\n--publish   npm publish - publish the package\n\n\n"
 fi
 
