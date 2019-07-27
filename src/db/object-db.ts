@@ -30,7 +30,7 @@ class ObjectDB extends BasicDB {
    *
    */
   //Return JSON trades from filepath, one set in class as default
-  loadData(DataClass: JSONData, filepath: string, name: string): JSONData[] {
+  loadData(DataClass: object, filepath: string, name: string): JSONData[] {
 
     const json = this.loadJSONFromFile(path.resolve(filepath, name));
     let data = [];
