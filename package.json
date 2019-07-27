@@ -1,6 +1,6 @@
 {
   "name": "jsondb-but-worse",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "",
   "main": "index.js",
   "directories": {
@@ -8,7 +8,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "mocha",
+    "test": "tsc && mocha",
     "build": "tsc",
     "n-pack":"./scripts/npm-pack-publish.sh --pack",
     "n-publish":"./scripts/npm-pack-publish.sh --publish",
