@@ -9,6 +9,7 @@ import BasicDB = require('./basic-db');
 import path = require('path');
 
 import JSONData = require('../basic/json-data');
+import JSONDataConstructableI = require('../basic/json-data-constructable-i');
 
 class ObjectDB extends BasicDB {
 
@@ -30,12 +31,12 @@ class ObjectDB extends BasicDB {
    *
    */
   //Return JSON trades from filepath, one set in class as default
-  loadData(DataClass: object, filepath: string, name: string): JSONData[] {
+  loadData(DataClass: JSONDataConstructableI, filepath: string, name: string): JSONData[] {
 
     const json = this.loadJSONFromFile(path.resolve(filepath, name));
     let data = [];
     for(let j in json){
-      data.push(new DataClass(j));
+      data.push(new DataClass(json[j]));
     }
     return data;
 
