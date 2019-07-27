@@ -17,8 +17,8 @@ class ObjectDB extends BasicDB {
    */
   saveData(data: JSONData[], filepath: string, name: string): void {
 
-    let json: JSONData[] = [];
-    for(let d in data){
+    let json: object[] = [];
+    for(let d of data){
       json.push(d.toJSON());
     }
     this.saveJSONToFile(path.resolve(filepath, name), json);
