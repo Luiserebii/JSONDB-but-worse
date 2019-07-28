@@ -1,7 +1,7 @@
 # JSONDB, but worse
 [![npm version](https://badge.fury.io/js/jsondb-but-worse.svg)](https://badge.fury.io/js/jsondb-but-worse)
 [![Build Status](https://travis-ci.org/Luiserebii/JSONDB-but-worse.svg?branch=master)](https://travis-ci.org/Luiserebii/JSONDB-but-worse)
-[![Total alerts](https://img.shields.io/lgtm/alerts/g/Luiserebii/JSONDB-but-worse.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/Luiserebii/JSONDB-but-worse/alerts/)
+[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/Luiserebii/JSONDB-but-worse.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/Luiserebii/JSONDB-but-worse/context:javascript)
 
 This project is the result of a misguided attempt to create a kind of JSON database API for, well, data storage, stored as JSONs.
 <br/>
